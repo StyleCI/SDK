@@ -1,6 +1,6 @@
 # StyleCI SDK
 
-The StyleCI PHP SDK.
+The StyleCI PHP SDK for https://api.styleci.io/.
 
 
 ## Installation
