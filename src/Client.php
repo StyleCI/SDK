@@ -70,6 +70,8 @@ class Client
     /**
      * Send a get request, and parse the result as json.
      *
+     * @param string $uri
+     *
      * @return array
      */
     protected function get($uri)
