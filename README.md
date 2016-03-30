@@ -14,7 +14,7 @@ The StyleCI PHP SDK for https://api.styleci.io/.
 
 Either [PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+ are required.
 
-To get the latest version of StyleCI SDK, simply require the project using [Composer](https://getcomposer.org):
+To get the latest version of the StyleCI SDK, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
 $ composer require styleci/sdk
@@ -38,4 +38,4 @@ If you discover a security vulnerability within this package, please e-mail us a
 
 ## License
 
-Alt Three SDK is licensed under [The MIT License (MIT)](LICENSE).
+The StyleCI SDK is licensed under [The MIT License (MIT)](LICENSE).
