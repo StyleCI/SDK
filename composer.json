@@ -1,0 +1,49 @@
+{
+    "name": "styleci/sdk",
+    "description": "The StyleCI PHP SDK",
+    "keywords": ["sdk", "alt-three", "styleci", "SDK", "Alt Three", "StyleCI"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "James Brooks",
+            "email": "james@alt-three.com"
+        },
+        {
+            "name": "Graham Campbell",
+            "email": "graham@alt-three.com"
+        },
+        {
+            "name": "Joseph Cohen",
+            "email": "joe@alt-three.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "guzzlehttp/guzzle": "^6.1"
+    },
+    "require-dev": {
+        "graham-campbell/testbench-core": "^1.1",
+        "mockery/mockery": "^0.9.4",
+        "phpunit/phpunit": "^4.8|^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "StyleCI\\SDK\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "StyleCI\\Tests\\SDK\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
