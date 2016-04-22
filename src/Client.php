@@ -13,8 +13,11 @@ namespace StyleCI\SDK;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\TransferException;
 use GuzzleHttp\HandlerStack;
-use GuzzleHttp\RetryMiddleware;
+use GuzzleHttp\Middleware;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * This is the client class.
@@ -50,7 +53,11 @@ class Client
             $this->client = $client;
         } else {
             $stack = HandlerStack::create();
-            $stack->push(RetryMiddleware::class);
+            $stack->push(Middleware::retry(function ($retries, RequestInterface $request, ResponseInterface $response = null, TransferException $exception = null) {
+                return $retries < 3 && ($exception instanceof ConnectException || ($response && $response->getStatusCode() >= 500));
+            }, function ($retries) {
+                return (int) pow(2, $retries) * 1000;
+            }));
             $this->client = new GuzzleClient([
                 'base_uri' => static::BASE_URL,
                 'handler'  => $stack,
