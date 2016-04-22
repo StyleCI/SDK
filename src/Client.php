@@ -54,7 +54,7 @@ class Client
             $this->client = new GuzzleClient([
                 'base_uri' => static::BASE_URL,
                 'handler'  => $stack,
-                'headers'  => ['Accept' => 'application/json', 'User-Agent' => 'styleci-sdk/1.0'],
+                'headers'  => ['Accept' => 'application/json', 'User-Agent' => 'styleci-sdk/1.1'],
             ]);
         }
     }
