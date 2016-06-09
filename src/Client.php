@@ -87,6 +87,18 @@ class Client
     }
 
     /**
+     * Validate the given config.
+     *
+     * @param string $config
+     *
+     * @return array
+     */
+    public function validate($config)
+    {
+        return $this->get('validate', ['query' => ['config' => $config]]);
+    }
+
+    /**
      * Send a get request, and parse the result as json.
      *
      * @param string $uri
