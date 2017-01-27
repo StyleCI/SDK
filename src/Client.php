@@ -100,6 +100,18 @@ class Client
     }
 
     /**
+     * Generate rules from the given config.
+     *
+     * @param string $config
+     *
+     * @return array
+     */
+    public function rules($config)
+    {
+        return $this->get('rules', ['query' => ['config' => $config]]);
+    }
+
+    /**
      * Send a get request, and parse the result as json.
      *
      * @param string $uri
