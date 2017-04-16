@@ -11,14 +11,8 @@
 
 namespace StyleCI\SDK;
 
-use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Exception\TransferException;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Middleware;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
+use GrahamCampbell\GuzzleFactory\GuzzleFactory;
 
 /**
  * This is the client class.
@@ -53,16 +47,9 @@ class Client
         if ($client) {
             $this->client = $client;
         } else {
-            $stack = HandlerStack::create();
-            $stack->push(Middleware::retry(function ($retries, RequestInterface $request, ResponseInterface $response = null, TransferException $exception = null) {
-                return $retries < 3 && ($exception instanceof ConnectException || ($response && $response->getStatusCode() >= 500));
-            }, function ($retries) {
-                return (int) pow(2, $retries) * 1000;
-            }));
-            $this->client = new GuzzleClient([
+            $this->client = GuzzleFactory::make([
                 'base_uri' => static::BASE_URL,
-                'handler'  => $stack,
-                'headers'  => ['Accept' => 'application/json', 'User-Agent' => 'styleci-sdk/1.1'],
+                'headers'  => ['Accept' => 'application/json', 'User-Agent' => 'styleci-sdk/1.3'],
             ]);
         }
     }
