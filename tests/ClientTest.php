@@ -38,7 +38,7 @@ class ClientTest extends TestCase
     {
         $client = new Client($mock = Mockery::mock(ClientInterface::class));
 
-        $mock->shouldReceive('request')->once()->with('GET', 'fixers')->andReturn($response = Mockery::mock(ResponseInterface::class));
+        $mock->shouldReceive('request')->once()->with('GET', 'fixers', [])->andReturn($response = Mockery::mock(ResponseInterface::class));
 
         $response->shouldReceive('getBody')->once()->andReturn('[{"name":"align_double_arrow","description":"Align double arrow symbols in consecutive lines.","risky":false,"conflict":"unalign_double_arrow","aliases":[]}]');
 
@@ -49,7 +49,7 @@ class ClientTest extends TestCase
     {
         $client = new Client($mock = Mockery::mock(ClientInterface::class));
 
-        $mock->shouldReceive('request')->once()->with('GET', 'presets')->andReturn($response = Mockery::mock(ResponseInterface::class));
+        $mock->shouldReceive('request')->once()->with('GET', 'presets', [])->andReturn($response = Mockery::mock(ResponseInterface::class));
 
         $response->shouldReceive('getBody')->once()->andReturn('[{"title":"PSR1","name":"psr1","fixers":["encoding","full_opening_tag","psr4"]}]');
 
