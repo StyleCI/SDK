@@ -29,6 +29,13 @@ class Client
     const BASE_URL = 'https://api.styleci.io/';
 
     /**
+     * The user agent.
+     *
+     * @var string
+     */
+    const USER_AGENT = 'styleci-sdk/1.3';
+
+    /**
      * The guzzle client instance.
      *
      * @var \GuzzleHttp\ClientInterface
@@ -44,14 +51,10 @@ class Client
      */
     public function __construct(ClientInterface $client = null)
     {
-        if ($client) {
-            $this->client = $client;
-        } else {
-            $this->client = GuzzleFactory::make([
-                'base_uri' => static::BASE_URL,
-                'headers'  => ['Accept' => 'application/json', 'User-Agent' => 'styleci-sdk/1.3'],
-            ]);
-        }
+        $this->client = $client ?: GuzzleFactory::make([
+            'base_uri' => static::BASE_URL,
+            'headers'  => ['Accept' => 'application/json', 'User-Agent' => static::USER_AGENT],
+        ]);
     }
 
     /**
