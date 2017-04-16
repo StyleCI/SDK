@@ -14,7 +14,7 @@ namespace StyleCI\Tests\SDK;
 use GrahamCampbell\TestBenchCore\MockeryTrait;
 use GuzzleHttp\ClientInterface;
 use Mockery;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use StyleCI\SDK\Client;
 
@@ -23,7 +23,7 @@ use StyleCI\SDK\Client;
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class ClientTest extends PHPUnit_Framework_TestCase
+class ClientTest extends TestCase
 {
     use MockeryTrait;
 
