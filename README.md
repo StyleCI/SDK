@@ -12,22 +12,10 @@ The StyleCI PHP SDK for https://api.styleci.io/.
 
 ## Installation
 
-Either [PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+ are required.
-
-To get the latest version of the StyleCI SDK, simply require the project using [Composer](https://getcomposer.org):
+The StyleCI SDK requires [PHP](https://php.net) 7. To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
 $ composer require styleci/sdk
-```
-
-Instead, you may of course manually update your require block and run `composer update` if you so choose:
-
-```json
-{
-    "require": {
-        "styleci/sdk": "^1.0"
-    }
-}
 ```
 
 
