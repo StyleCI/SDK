@@ -84,9 +84,9 @@ class Client
      *
      * @return array
      */
-    public function validate($config)
+    public function validate(string $config)
     {
-        return $this->get('validate', ['query' => ['config' => $config]]);
+        return $this->get('validate', ['config' => $config]);
     }
 
     /**
@@ -96,22 +96,23 @@ class Client
      *
      * @return array
      */
-    public function rules($config)
+    public function rules(string $config)
     {
-        return $this->get('rules', ['query' => ['config' => $config]]);
+        return $this->get('rules', ['config' => $config]);
     }
 
     /**
      * Send a get request, and parse the result as json.
      *
      * @param string $uri
+     * @param array  $query
      *
      * @return array
      */
-    protected function get($uri)
+    protected function get(string $uri, array $query = [])
     {
-        $response = $this->client->request('GET', $uri);
+        $response = $this->client->request('GET', $uri, $query ? ['query' => $query] : []);
 
-        return json_decode($response->getBody(), true);
+        return json_decode((string) $response->getBody(), true);
     }
 }
