@@ -11,8 +11,8 @@
 
 namespace StyleCI\SDK;
 
-use GuzzleHttp\ClientInterface;
 use GrahamCampbell\GuzzleFactory\GuzzleFactory;
+use GuzzleHttp\ClientInterface;
 
 /**
  * This is the client class.
