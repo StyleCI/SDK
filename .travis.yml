@@ -1,17 +1,24 @@
-language: php
+dist: xenial
 
-php:
-  - 7.0
-  - 7.1
+matrix:
+  include:
+    - env:
+        - PHP_VERSION=7.0
+    - env:
+        - PHP_VERSION=7.1
+    - env:
+        - PHP_VERSION=7.2
+    - env:
+        - PHP_VERSION=7.3
 
-sudo: false
+before_install:
+  - travis_retry docker pull registry.gitlab.com/grahamcampbell/php:$PHP_VERSION
 
 install:
-  - travis_retry composer install --no-interaction --prefer-source
+  - travis_retry docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint composer registry.gitlab.com/grahamcampbell/php:$PHP_VERSION install --no-suggest --prefer-dist -n -o
 
 script:
-  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+  - docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint vendor/bin/phpunit registry.gitlab.com/grahamcampbell/php:$PHP_VERSION --coverage-clover build/logs/clover.xml
 
 after_script:
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
+  - travis_retry docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint ocular registry.gitlab.com/grahamcampbell/php:$PHP_VERSION code-coverage:upload --format=php-clover build/logs/clover.xml
