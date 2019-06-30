@@ -1,20 +1,12 @@
 {
     "name": "styleci/sdk",
     "description": "The StyleCI PHP SDK",
-    "keywords": ["sdk", "alt-three", "styleci", "SDK", "Alt Three", "StyleCI"],
+    "keywords": ["api", "sdk", "styleci", "API", "SDK", "StyleCI", "StyleCI API", "StyleCI SDK"],
     "license": "MIT",
     "authors": [
         {
-            "name": "James Brooks",
-            "email": "james@alt-three.com"
-        },
-        {
-            "name": "Graham Campbell",
-            "email": "graham@alt-three.com"
-        },
-        {
-            "name": "Joseph Cohen",
-            "email": "joe@alt-three.com"
+            "name": "StyleCI",
+            "email": "support@styleci.io"
         }
     ],
     "require": {

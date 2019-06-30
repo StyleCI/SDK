@@ -7,7 +7,7 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Latest Version](https://img.shields.io/github/release/StyleCI/SDK.svg?style=flat-square)](https://github.com/StyleCI/SDK/releases)
 
-The StyleCI PHP SDK for https://api.styleci.io/.
+**The StyleCI PHP SDK for https://api.styleci.io/.**
 
 
 ## Installation
@@ -21,7 +21,7 @@ $ composer require styleci/sdk
 
 ## Security
 
-If you discover a security vulnerability within this package, please e-mail us at support@alt-three.com. All security vulnerabilities will be promptly addressed.
+Our full security policy is available to read [here](https://github.com/StyleCI/SDK/security/policy).
 
 
 ## License
