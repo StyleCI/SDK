@@ -10,10 +10,10 @@
 
 ## Installation
 
-The StyleCI SDK requires [PHP](https://php.net) 7. To get the latest version, simply require the project using [Composer](https://getcomposer.org):
+The StyleCI SDK requires [PHP](https://php.net) 7.2.5 or higher. To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require styleci/sdk
+$ composer require styleci/sdk:^1.4
 ```
 
 
