@@ -11,8 +11,8 @@
     ],
     "require": {
         "php": "^7.0|^8.0",
-        "graham-campbell/guzzle-factory": "^3.0",
-        "guzzlehttp/guzzle": "^6.3"
+        "graham-campbell/guzzle-factory": "^3.0|^4.0",
+        "guzzlehttp/guzzle": "^6.3|^7.2"
     },
     "require-dev": {
         "graham-campbell/testbench-core": "^1.1",
