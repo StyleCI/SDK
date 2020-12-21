@@ -15,7 +15,7 @@
         "guzzlehttp/guzzle": "^6.3|^7.2"
     },
     "require-dev": {
-        "graham-campbell/testbench-core": "^1.1",
+        "graham-campbell/testbench-core": "^3.2.2",
         "mockery/mockery": "^1.2",
         "phpunit/phpunit": "^6.5|^7.0|^8.0"
     },
