@@ -16,11 +16,6 @@ namespace StyleCI\SDK;
 use GrahamCampbell\GuzzleFactory\GuzzleFactory;
 use GuzzleHttp\ClientInterface;
 
-/**
- * This is the client class.
- *
- * @author Graham Campbell <graham@alt-three.com>
- */
 class Client
 {
     /**

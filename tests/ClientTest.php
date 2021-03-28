@@ -11,7 +11,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace StyleCI\Tests\SDK;
+namespace Tests;
 
 use GrahamCampbell\TestBenchCore\MockeryTrait;
 use GuzzleHttp\ClientInterface;
@@ -20,11 +20,6 @@ use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use StyleCI\SDK\Client;
 
-/**
- * This is the client test class.
- *
- * @author Graham Campbell <graham@alt-three.com>
- */
 class ClientTest extends TestCase
 {
     use MockeryTrait;

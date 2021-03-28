@@ -26,7 +26,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "StyleCI\\Tests\\SDK\\": "tests/"
+            "Tests\\": "tests/"
         }
     },
     "config": {
