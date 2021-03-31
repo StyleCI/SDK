@@ -1,0 +1,5 @@
+risky: true
+enabled:
+  - modernize_types_casting
+  - phpdoc_trim_consecutive_blank_line_separation
+  - ternary_to_null_coalescing

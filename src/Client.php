@@ -30,7 +30,7 @@ class Client
      *
      * @var string
      */
-    const USER_AGENT = 'styleci-sdk/1.4';
+    const USER_AGENT = 'styleci-sdk/1.5';
 
     /**
      * The guzzle client instance.
