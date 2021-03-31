@@ -50,8 +50,23 @@ class Client
     {
         $this->client = $client ?: GuzzleFactory::make([
             'base_uri' => static::BASE_URL,
-            'headers'  => ['Accept' => 'application/json', 'User-Agent' => static::USER_AGENT],
+            'headers'  => ['Accept' => 'application/json', 'User-Agent' => self::createUserAgent()],
         ]);
+    }
+
+    /**
+     * Create the API user agent string.
+     *
+     * @return string
+     */
+    private static function createUserAgent()
+    {
+        return \sprintf(
+            '%s (%s; PHP %s)',
+            static::USER_AGENT,
+            \PHP_OS_FAMILY,
+            \explode('-', \PHP_VERSION, 2)[0]
+        );
     }
 
     /**
