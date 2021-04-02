@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the StyleCI SDK.
  *
- * (c) Alt Three Services Limited
+ * (c) Graham Campbell Technology Ltd
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
